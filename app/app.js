@@ -159,16 +159,17 @@ angular.module('restaurantapp', [])
             
             //Step 1: Create a JavaScript object to hold the comment from the form
   
-    
+            
            
             $scope.feedback = {
-                rating:'5',
+                inlineRadioOptions: '5',
                 comment:'',
                 author:'',
                 date: new Date().toISOString()
                 
             };
     
+   
             $scope.submitComment = function () {
                 
                 console.log($scope.feedback);
@@ -177,7 +178,7 @@ angular.module('restaurantapp', [])
                // "The date property of your JavaScript object holding the comment" = new //Date().toISOString();
                 
                 // Step 3: Push your comment into the dish's comment array
-                $scope.dish.comments.push($scope.feedback);
+                $scope.dish.comments.push(com);
                 
                 //Step 4: reset your form to pristine
                 
