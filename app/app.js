@@ -168,21 +168,21 @@ angular.module('restaurantapp', [])
                 date: new Date().toISOString()
                 
             };
-    
+            
    
             $scope.submitComment = function () {
                 
-                console.log($scope.feedback);
+                
                 
                 //Step 2: This is how you record the date
                // "The date property of your JavaScript object holding the comment" = new //Date().toISOString();
                 
                 // Step 3: Push your comment into the dish's comment array
-                $scope.dish.comments.push(com);
+                //$scope.dish.comments.push();
                 
                 //Step 4: reset your form to pristine
                 
-                commentForm.$setPristine();
+                //commentForm.$setPristine();
                 
                 
                 //Step 5: reset your JavaScript object that holds your comment
