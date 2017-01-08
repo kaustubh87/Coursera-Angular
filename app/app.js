@@ -158,24 +158,24 @@ angular.module('restaurantapp', [])
         }]).controller('DishCommentController', ['$scope', function($scope) {
             
             //Step 1: Create a JavaScript object to hold the comment from the form
-  
             
-          
+            
             $scope.feedback = {
-                inlineRadioOptions: '5',
+                rating: '5',
                 comment:'',
                 author:'',
                 date: ''
                 
             };
+         
     
-           
-            
    
+            
+    
             $scope.submitComment = function () {
                 
                 
-                 //console.log($scope.feedback);
+                 console.log($scope.feedback);
                 //console.log($scope.dish);
                 //Step 2: This is how you record the date
                // "The date property of your JavaScript object holding the comment" = new //Date().toISOString();
