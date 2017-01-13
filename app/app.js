@@ -138,7 +138,7 @@ angular.module('restaurantapp', [])
                                    date:"2015-02-13T17:57:28.556094Z"
                                },
                                {
-                                   rating:4,
+                                   rating:1,
                                    comment:"Ultimate, Reaching for the stars!",
                                    author:"Ringo Starry",
                                    date:"2013-12-02T17:57:28.556094Z"
@@ -169,13 +169,10 @@ angular.module('restaurantapp', [])
             };
          
     
-   
-            
-    
             $scope.submitComment = function () {
                 
                 
-                 console.log($scope.feedback);
+                console.log($scope.feedback);
                 //console.log($scope.dish);
                 //Step 2: This is how you record the date
                // "The date property of your JavaScript object holding the comment" = new //Date().toISOString();
