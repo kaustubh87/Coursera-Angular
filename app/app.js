@@ -148,6 +148,12 @@ angular.module('restaurantapp', [])
                                    comment:"It's your birthday, we're gonna party!",
                                    author:"25 Cent",
                                    date:"2011-12-02T17:57:28.556094Z"
+                               },
+                               {
+                                   rating:3,
+                                   comment"Nice ambience",
+                                   author:"23 Cents",
+                                   date:"2017-03-02T17:57:28.556094Z"
                                }
                                
                            ]
