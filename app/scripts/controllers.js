@@ -8,7 +8,14 @@ angular.module('restaurantapp')
             $scope.filtText = '';
             $scope.showDetails = false;
 
-            $scope.dishes= menuFactory.getDishes();
+            $scope.dishes= {};
+            
+            menuFactory.getDishes()
+                .then(
+                funcion(response){
+                      $scope.dishes = response.data;
+                        }
+                     );
 
                         
             $scope.select = function(setTab) {
@@ -70,10 +77,12 @@ angular.module('restaurantapp')
 
         .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
 
-            var dish= menuFactory.getDish(parseInt($stateParams.id,10));
-            
-            $scope.dish = dish;
-            
+            $scope.dish = {};
+            menuFactory.getDish(parseInt($stateParams.id,10))
+            .then(function(response){
+                $scope.dish = response.data; 
+            });
+             
         }])
 
         .controller('DishCommentController', ['$scope', function($scope) {
@@ -98,8 +107,12 @@ angular.module('restaurantapp')
            var promotions = menuFactory.getPromotion();
            $scope.promos = promotions;
             
-           var first_dish = menuFactory.getDish(0);
-           $scope.first_dish = first_dish;
+           $scope.first_dish = {};
+           menuFactory.getDish(0)
+            .then(function(response){
+               $scope.dish = response.data;
+           });
+           
             
            var leader = corporateFactory.getLeader(3);
            $scope.executive_leader = leader;
@@ -112,13 +125,7 @@ angular.module('restaurantapp')
             
             var leaders = corporateFactory.getLeaders();
             $scope.leader_list = leaders;
-            
-            
-            
-            
-            
-            
-            
+           
         }])
 
         // implement the IndexController and About Controller here
