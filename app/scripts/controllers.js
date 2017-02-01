@@ -7,6 +7,8 @@ angular.module('restaurantapp')
             $scope.tab = 1;
             $scope.filtText = '';
             $scope.showDetails = false;
+            $scope.showMenu = false;
+            $scope.message = "Loading . . .";
 
             $scope.dishes= {};
             
@@ -14,6 +16,9 @@ angular.module('restaurantapp')
                 .then(
                 funcion(response){
                       $scope.dishes = response.data;
+                      $scope.showDetails  = true;
+                        }, function(response){
+                    $scope.message = "Error: " +response.status + " " +response.statusText;
                         }
                      );
 
@@ -78,10 +83,17 @@ angular.module('restaurantapp')
         .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
 
             $scope.dish = {};
+            $scope.showDish = false;
+            $scope.message = "Loading . . .";
             menuFactory.getDish(parseInt($stateParams.id,10))
             .then(function(response){
                 $scope.dish = response.data; 
-            });
+                $scope.showDish = true;
+            },
+                  function(response){
+                $scope.message = "Error: " +response.status + " " +response.statusText;
+            }
+                 );
              
         }])
 
@@ -106,11 +118,17 @@ angular.module('restaurantapp')
             
            var promotions = menuFactory.getPromotion();
            $scope.promos = promotions;
+            $scope.showDish = false;
+            $scope.message = "Loading . . .";
             
            $scope.first_dish = {};
            menuFactory.getDish(0)
             .then(function(response){
                $scope.dish = response.data;
+               $scope.showDish = true;
+           },
+                 function(response){
+               $scope.message = "Error: " +response.status + " " +response.statusText;
            });
            
             
