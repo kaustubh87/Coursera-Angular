@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('restaurantapp')
-        .constant('baseURL', "http://localhost:3000/")
-        .service('menuFactory',['$http', 'baseURL', function($http, $baseURL) {
+        .service('menuFactory', function(){
     
             
             var promotions = [
@@ -17,16 +16,7 @@ angular.module('restaurantapp')
                 
             ];
     
-                this.getDishes = function(){
-                    
-                    return $http.get(baseURL+ "dishes");
-                    
-                };
-    
-                this.getDish = function (index) {
-                    
-                    return $http.get(baseURL+ "dishes/" + index);
-                };
+               
     
                 // implement a function named getPromotion
                 // that returns a selected promotion.
@@ -38,7 +28,7 @@ angular.module('restaurantapp')
     
                 
                         
-        }])
+        })
 
         .factory('corporateFactory', function() {
     

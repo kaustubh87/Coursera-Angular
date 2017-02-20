@@ -14,7 +14,7 @@ angular.module('restaurantapp')
             
             menuFactory.getDishes()
                 .then(
-                funcion(response){
+                function(response){
                       $scope.dishes = response.data;
                       $scope.showDetails  = true;
                         }, function(response){

@@ -1,0 +1,11 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/kvin/Desktop/angular-coursera/bower_components/bootstrap/js/tooltip.js",
+        "/Users/kvin/Desktop/angular-coursera/bower_components/bootstrap/js/transition.js",
+        "/Users/kvin/Desktop/angular-coursera/before-assignment-4 copy/bower_components/angular-route/angular-route.min.js",
+        "/Users/kvin/Desktop/angular-coursera/before-assignment-4 copy/bower_components/angular-ui-router/src/viewScroll.js",
+        "/Users/kvin/Desktop/angular-coursera/bower_components/angular-ui-router/src/stateDirectives.js",
+        "/Users/kvin/Desktop/angular-coursera/bower_components/angular-ui-router/src/stateFilters.js",
+        "/Users/kvin/Desktop/angular-coursera/bower_components/angular-ui-router/src/templateFactory.js"
+    ]
+}
